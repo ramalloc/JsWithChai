@@ -1,3 +1,6 @@
+// -> While comparision the data with each other we will get to see the implicit conversion of data by compiler
+
+
 // console.log(2 > 1);
 // console.log(2 >= 1);
 // console.log(2 < 1);
@@ -13,14 +16,16 @@
 // console.log(null > 0); -> It returns false, because when we compare {null} with comparision opertaors(>,<,>=,<=) 
 // it converts null to 0
 
-// console.log(null == 0);-> It returns false, because when we compare {null} with equal opertaor(==) 
 // it doesn't converts null to any number
+// console.log(null == 0); // -> It returns false, because when we compare {null} with equal opertaor(==) 
+
+// it converts null to 0, and returns true
 // console.log(null >= 0);
 
 // The below returns false
-console.log(undefined == 0);
-console.log(undefined > 0);
-console.log(undefined < 0);
+// console.log(undefined == 0);
+// console.log(undefined > 0);
+// console.log(undefined < 0);
 
 // Strict equals (===), It checks strictly with the data type also
-console.log("2" === 2);
+// console.log("2" === 2);
