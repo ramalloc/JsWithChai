@@ -10,7 +10,7 @@ city = "ramapur"
 console.table([accountId, email, password, city]);
 
 /* Initially when javascript introduced, theree is no concept of scope of variable. So when a user change something in 
-    variable with same name which is used in other function also, SO the changes reflects in all the function where the variable
+    variable with same name which is used in other function also, So the changes reflects in all the function where the variable
     name is same.
 
     To avoid the {var} (scope of variable problem) we use {let} 

@@ -2,19 +2,19 @@
 
 // Below is a number
 let num = 22  
-// console.log(typeof(num));
+// console.log(typeof(num)); // -> Number
 
 // Below is a string
 let str = "22"  
-// console.log(typeof(str));
+// console.log(typeof(str)); // -> String
 
 // Below is a string
 let alphaNum = "22abc"  
-// console.log(typeof(alphaNum));
+// console.log(typeof(alphaNum)); // -> String
 
 // -> Convert String Data Type to Number
 let strToNum = Number(alphaNum)
-// console.log(typeof(strToNum));
+console.log(typeof(strToNum));
 // str contains numbers and string also but after converging string to number the data types will become number
 // instead of it contains alphabets
 
@@ -48,7 +48,7 @@ let flBlToNum = Number(falBoolNum);
 // -> Any Datatype to Boolean
 let trNum = 1
 let boolTrNum = Boolean(trNum);
-console.log(boolTrNum);
+// console.log(boolTrNum);
 // trNum = natural Number; It return true always
 // trNum = "Any String"; It return true always
 
@@ -86,11 +86,11 @@ let blFlToStr = String(blFl)
 // -> undefigned and null to String
 let nullVar = null
 let nullToStr = String(nullVar);
-console.log("value in String of nullToStr is : ",nullToStr);
-console.log("Type of of nullToStr is : ",typeof nullToStr);
+// console.log("value in String of nullToStr is : ",nullToStr);
+// console.log("Type of of nullToStr is : ",typeof nullToStr);
 
 
 let undefVar = undefined
 let undefToStr = String(undefVar);
-console.log("value in String of undefToStr is : ",undefToStr);
-console.log("Type of of undefToStr is : ",typeof undefToStr);
+// console.log("value in String of undefToStr is : ",undefToStr);
+// console.log("Type of of undefToStr is : ",typeof undefToStr);
