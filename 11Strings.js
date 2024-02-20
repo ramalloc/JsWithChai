@@ -33,6 +33,7 @@ console.log(str3.charAt(2));
 
 // The indexOf() returns the character at the given index of the String .  
 console.log(str3.indexOf('t'));
+// returning -1 if character doesn't exists
 
 // subString() make a substring within the given range
 const newString = str3.substring(0, 4)
@@ -49,7 +50,7 @@ console.log(newStringOne.trim());
 
 // The below is a sanatized code which includes codes at place of space because our browser doesn't supports whitespaces.
 const url = "https://hitesh.com/hitesh%20choudhary"
-// replace() removes the already exists characters from the given character
+// replace(), It replace the already exists characters by given characters in the string
 console.log(url.replace('%20', '-'))
 
 // includes() returns boolean. It is used to check that the String have the searching values or not.

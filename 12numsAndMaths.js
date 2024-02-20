@@ -7,6 +7,6 @@ const exp_num = new Number(400);
 console.log(exp_num);
 
 // We got Many Methods by defining the Number Explicitly 
-// Changing number to String and getting the length of the String
+// Changing number to String and getting the length of the Number
 
 console.log(exp_num.toString().length);

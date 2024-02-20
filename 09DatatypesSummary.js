@@ -4,7 +4,7 @@
 1. Primitive
 2. Non-Primitive
 
--> Data ypes descides on the basis that how the data is Stored in the memory and the data get accessed from the memory.
+-> Data ypes decides on the basis that how the data is Stored in the memory and the data get accessed from the memory.
 */
 
 
@@ -16,7 +16,7 @@
 -> Primitive Data Types are :-
     String, Number, Boolean, null, undefined, Symbol, BigInt
 */
-// /*
+
 
 // Number
 const score = 100
@@ -28,6 +28,7 @@ const outsideTemp = null
 // -> undefigned
 let userEmail; 
 
+// -> Symbol (If we took variables with same value in Symbol then despite of it both we will behave different or unique)
 const id = Symbol('123')
 const anotherId = Symbol('123')
 
@@ -45,7 +46,7 @@ console.table(["Type of Number is : " + typeof scoreValue,
                 "Type of undefigned is : " + typeof userEmail,
                 "Type of Symbol is : " + typeof id,
                 "Type of BigInt is : " + typeof bigNumber]);
-// */
+
 
 
 

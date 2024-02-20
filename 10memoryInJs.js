@@ -21,6 +21,10 @@ console.log(primVar2);
     We get the reference of that value. 
     And If We store the primary variable in a secondary variable, and tried to change the value of secondary variable,
     primary variable gets affected because secondary variable stores the reference of the primary variable.
+
+    OR 
+    
+    Both Primary and Secondary variables are pointing or referencing to the same data in memory.
 */
 let obj1 = {
     email: "rj@123",
