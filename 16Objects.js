@@ -21,11 +21,11 @@ const mySym = Symbol("key1")
 
 const JsUser = {
     name: "Hitesh",
-    "full name": "Hitesh Choudhary",
+    "full name": "Roshan Kumar",
     [mySym]: "mykey1",
     age: 18,
-    location: "Jaipur",
-    email: "hitesh@google.com",
+    location: "Delhi",
+    email: "roshan@google.com",
     isLoggedIn: false,
     lastLoginDays: ["Monday", "Saturday"]
 }
@@ -67,7 +67,12 @@ JsUser.greetingTwo = function(){
     console.log(`Hello JS user, ${this.name}`);
 }
 
-console.log(JsUser.greeting);
-console.log(JsUser.greeting());
-console.log(JsUser.greetingTwo());
+// In below we are getting the reference which saved as valiu in object with respect to the key(function_name) 
+// console.log(JsUser.greeting);
+
+// Calling the funciton
+// console.log(JsUser.greeting());
+// console.log(JsUser.greetingTwo());
+
+// console.log(JsUser);
 
