@@ -47,5 +47,5 @@ const addTwo = function (num) {
 }
 
 /* So when we hold a function in a variable we cannot access it as before, But in normal function we access the 
-    function before declaration. This is called hoisting.
+    function before declaration. This is called hoisting. 
 */
