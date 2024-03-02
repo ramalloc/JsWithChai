@@ -13,7 +13,7 @@
 function start(){
     console.log("DB CONNECTED...")
 }
-start();
+// start();
 
 // IFFE
 // We wrapped the normal function in a round bracket and call that function after its declaration liek this -> (func)()
@@ -26,10 +26,16 @@ start();
 // We can implement the IIFE with arrow function
 (() => {
     console.log(`DB Connected by arrow function`);
-})
+})()
 
 // But we can implement normal functions after it without adding semicolon.
 function start2(){
     console.log("DB CONNECTED...")
 }
 start2();
+
+// Passing parameter in IIFE -> We can pass the parameter as usual funcitons like in calling
+// *** Also We have to end the earlier functions by explicitly adding semicolon in last before writing IIFE function after that,
+((name) => {
+    console.log(`DB Connected by ${name}`);
+})("Roshan")
