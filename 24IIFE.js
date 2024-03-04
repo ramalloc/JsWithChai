@@ -17,6 +17,7 @@ function start(){
 
 // IFFE
 // We wrapped the normal function in a round bracket and call that function after its declaration liek this -> (func)()
+// Named IIFE
 (function startDB(){
     console.log("DB CONNECTED BY IIFE...")
 })();
@@ -24,6 +25,7 @@ function start(){
 // We cannot declare another iife function without ending the earlier iife funtion by adding semicolon(;) in last.
 
 // We can implement the IIFE with arrow function
+// Normal IIFE
 (() => {
     console.log(`DB Connected by arrow function`);
 })()
