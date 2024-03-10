@@ -1,0 +1,85 @@
+<!-- Here We learn the Selectors Node List and HTML collections -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM2</title>
+</head>
+<body class="bg-black">
+    <h1 id="title" class="heading">
+        DOM2 Object manipulation <span style="font-size: large; display: none">Test Text</span>
+    </h1>
+    <h1>
+        New H1 Tag 
+    </h1>
+    <h2>
+        First H2 tag
+    </h2>
+    <h1>
+        Input field
+        <input type="password">
+    </h1>
+    <h1 class="lists">
+        <ul>
+            <li>Once</li>
+            <li>Twice</li>
+            <li>Thrice</li>
+        </ul>
+    </h1>
+    <!-- 
+        document.getElementById('title')
+        -> We can the element by its id and further we can perform operations on that element after selection.
+        document.getElementById('title').id
+        -> In background javascript write or understand the "class" as "className", So to get class of any element we use className.
+        document.getElementById('title').className
+        -> We have another property after selection of any element is getAttribute(), It takes keys and returns values means 
+            if we want id or class then we can pass getAttribut(id) or getAttribut(class) it will return the values in element.
+        -> Now we have setAttribute() which overwrites the present given attribute, like we want to set class then we pass new 
+            and class name with class setAttribute('class', 'test heading').
+        -> We can set style also like title.style.padding = "15px".
+    -->
+
+    <!-- Ways to get text in HTML 
+    -> We have textContent, innerHTML and innerText which gives the text inside the html. 
+    -> innerText returns only visible texts, it doesn't show the hidden texts which is hide by css styling.
+    -> textContext shoes the all text although it is hidden by css styling.
+    -> innetHTML shows the text but also the other HTML inside the element. 
+    -->
+
+    <!-- Query Selector -->
+    <!-- 
+    -> It returns the first encountered value that given in the argumnent like below - 
+    -> To get from id, classs, tag, attribute of css etc.
+        document.querySelector('#title')
+        document.querySelector('.heading')
+        document.querySelector('h1')
+        document.querySelector('input[type="password"]')
+        document.querySelector('h1:first-child')
+     -->
+
+    <!-- Query Selector All -->
+    <!-- 
+        -> It returns a NodeList, It is like array structure but it is not purely array. We have limitd options like array here.
+        -> Also we cannot access their elements directly we have to treat all list elements as array list like below - 
+            const myH1List = document.querySelectorAll(li)
+            myH1List[0].style.color = 'green'
+            
+            myH1List.forEach((l) => {
+                l.style.color = 'green'
+            })
+
+     -->
+
+     <!-- HTML Collection -->
+     <!-- 
+        -> We cannot loop HTMLCollections like in NodeList therefore we have to convert the HTMLCollection into Array
+        to use loop on it. So for that we have method of array Array.from() it convert the given into an array.
+        const myConvertedArray =  Array.from(myH1List)
+        now we can perform operation of array's on the above.
+        myConvertedArray.forEach((l) => {
+            l.style.color = 'red'
+        })
+      -->
+</body>
+</html>
