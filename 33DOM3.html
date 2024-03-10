@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM3</title>
+</head>
+<body>
+    <div class="weeks">
+        <!-- Checking comment node -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+        <div class="day">Friday</div>
+        <div class="day">Saturday</div>
+        <div class="day">Sunday</div>
+    </div>
+</body>
+<script>
+    // --- Parent Properties --- 
+
+    // -- Using children to get HTMLCollection -- 
+    const weeks = document.querySelector('.weeks');
+    // We are getting weeks selected elements and printing below
+    // console.log(weeks);  
+
+    // Getting Childrens of weeks in HTMLCollection
+    // console.log(weeks.children);
+    
+    // Getting text of a children from week
+    // console.log(weeks.children[1].innerHTML);
+    
+    // Geeting all days/children individually
+    for (let i = 0; i < weeks.children.length; i++) {
+        // console.log(weeks.children[i].innerHTML);
+    }
+
+    // Getting fisrt children 
+    // console.log(weeks.firstElementChild);
+    
+    // Getting Last children 
+    // console.log(weeks.lastElementChild);
+
+    // --- Children Properties ---
+    const dayOne = document.querySelector('.day')
+    // console.log(dayOne);
+
+    // To get Parents of a child
+    // console.log(dayOne.parentElement);
+    
+    // Get next Sibling of a child
+    // console.log(dayOne.nextSibling);
+    
+
+    // -- Nodes --
+    /* To see the node of any element, nodes are the proper tree structure which includes all elements information about tags 
+        and types which is made by browser in backend.
+        The below is showing nine values although we have 7 elements because everything is important/counted here like - 
+        line break is also a node element, It only counts 1 line break after that it doesn't counts. It also includes comments. 
+    */  
+//    console.log(weeks.childNodes);
+
+
+// --- Creating Element ---
+// To create element we have a document method called createElement(), which takes tags as input.
+    const div = document.createElement('div');
+    // The div is empty
+    console.log(div);
+
+    // Adding id, className and style in div
+    div.id = "main";
+    div.className = "title";
+    div.style.color = "red";
+    // We can set all the abpve by setAttribute() also 
+    div.setAttribute('id', 'second');
+
+    // -- Adding Text in created element -- 
+// We can add text with innerText but it is an expensive operation because it fetch the text from element then it overwrites the text.
+    // div.innerText = "Roshan Kumar, Text added by "
+    /* 
+    -- Second way to add text in an element --
+    -> We create text node using document method createTextNode then we append this text node as child node in the created element.
+    */
+
+</script>
+</html>
