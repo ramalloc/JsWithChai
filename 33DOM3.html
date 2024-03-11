@@ -82,6 +82,9 @@
     -- Second way to add text in an element --
     -> We create text node using document method createTextNode then we append this text node as child node in the created element.
     */
-
+    const addText = document.createTextNode("This is created text node and Appended in document body !");
+    div.appendChild(addText);
+    // Now we have to attach the above div in body of the document
+    document.body.appendChild(div);
 </script>
 </html>
