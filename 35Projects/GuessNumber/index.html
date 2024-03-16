@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Game</title>
+</head>
+
+<body bgcolor="#242424">
+    <div class="container"
+        style="display: flex; flex-direction: column; justify-content: center; align-items: center; color: white">
+        <div class="title" style="font-size: x-large; font-weight: 500;">
+            <h1>Guess The Number</h1>
+        </div>
+        <form class="form" style="display: flex; flex-direction: column;">
+            <input type="text" id="numField"
+                style="padding: .5rem; font-size: large; text-align: center; margin-bottom: 2rem; border-radius: .3rem; border: none;">
+            <input type="submit" id="sub" style="background-color: aquamarine; border-radius: .3rem; padding: .5rem;">
+        </form>
+        <div class="details">
+                <p>Previous Guesses : <span id="prevGuess"></span></p>
+                <p>Guess Remaining : <span id="guessRem"></span></p>
+                <h1 id="lowOrHi"></h1>
+        </div>
+        <div>
+            <button id="startOver" style="background-color: aquamarine; border-radius: .3rem; padding: .5rem;">
+                Start Over
+            </button>
+        </div>
+    </div>
+</body>
+<script src="numberOps.js"></script>
+
+</html>

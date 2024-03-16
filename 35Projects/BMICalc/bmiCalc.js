@@ -18,6 +18,4 @@ form.addEventListener('submit', (e) => {
 
     // adding the bmi into result
     result.innerHTML = `<span>${bmi}</span>`
-
-
-})
+    })
