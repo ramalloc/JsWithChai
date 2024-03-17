@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop"
+                    src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="japan"
+                    src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="river"
+                    src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="owl"
+                    src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="prayer"
+                    src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    /* We should not use events in line as html attributes because it causes issues while scaling the project, It is not a feasible 
+        approach. Therefore we should add events in javascript script file like below - 
+    */
+    // document.getElementById('owl').onclick = function () {
+    //     alert('iwl clicked')
+    // }
+    /*
+    The above approach to use onclick event is also not feasible because this onclick() event gives such less information.
+    Therefore we should use event listners because it provides propogation ability with more features than 
+    */
+
+    // The below is the syntax to add event listner which takes the below three arguments 
+    //  addEventListener('click', function(){}, false)
+
+    // But bydefault third argument is false so we don't write it in event listner
+    //  addEventListener('click', function(){})
+
+    // -- Other Tool for handle events -- 
+    // -> attachEvent = Used in Internet Explorer
+    // -> JQuery = on
+
+
+    // By addEventListner we get event object
+    /*
+    -> We get two types of events 1st is Browser Event and 2nd is Environment Events - Mouse Events
+    
+    Things to Learn
+    -> type, timestamp, defaultPrevented
+    -> target, to Element, srcElement, currentTarget,
+    -> clientX, clientY, screenX, screenY
+    -> altkey, ctrlkey, shiftkey, keyCode
+    */
+    /*    -- Event Propgation -- 
+    -> Event Propgation have two context 1st is Event Bubling and 2nd is Event Capturing, In market we do mostly false
+    which is event bubling but in some scenerious we do event capturing 
+    */
+
+    // --- Bubbling Context ---
+    // Ul ID Listner
+    // document.getElementById('images').addEventListener('click', function (e) {
+    //     console.log('clicked inside the ul');
+    // }, false)
+
+    // Owl ID Listner
+    // document.getElementById('owl').addEventListener('click', function (e) {
+    //     console.log('clicked on Owl');
+    // }, false)
+
+    // Now we will see which code executes first
+    // So In the above events by clicking on 'ul' id 'clicked inside the ul' prints
+    // But On clicking 'owl' id 'clicked on Owl' and then 'clicked inside the ul' prints. 
+
+    // --> The above is an example of Bubbling Context, in which bubble goes from bottom to top means event propogates from
+    // inside to outside of element. first inside element event runs then outside element event will run.
+    
+    
+    // ---- Capturing Context ----
+    document.getElementById('images').addEventListener('click', function (e) {
+        console.log('clicked inside the ul');
+    }, true)
+    
+    document.getElementById('owl').addEventListener('click', function (e) {
+        console.log('clicked on Owl');
+    }, true)
+    // --> The above is an example of capturing Context, in which order goes from top to bottom means event propogates from
+    // outside to inside of element, first outside element event runs then inside element event will run.
+    
+</script>
+
+</html>
