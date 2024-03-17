@@ -85,19 +85,57 @@
 
     // --> The above is an example of Bubbling Context, in which bubble goes from bottom to top means event propogates from
     // inside to outside of element. first inside element event runs then outside element event will run.
-    
-    
+
+
     // ---- Capturing Context ----
-    document.getElementById('images').addEventListener('click', function (e) {
-        console.log('clicked inside the ul');
-    }, true)
-    
-    document.getElementById('owl').addEventListener('click', function (e) {
-        console.log('clicked on Owl');
-    }, true)
+    // document.getElementById('images').addEventListener('click', function (e) {
+    //     console.log('clicked inside the ul');
+    // }, true)
+
+    // document.getElementById('owl').addEventListener('click', function (e) {
+    //     console.log('clicked on Owl');
+    // }, true)
     // --> The above is an example of capturing Context, in which order goes from top to bottom means event propogates from
     // outside to inside of element, first outside element event runs then inside element event will run.
-    
+
+
+    // --- Stop Propogation ---
+    /*Sometimes we don't want events bubbling, like we want that inner element works as different event and outer element as 
+    different. For that we have stopPropagation() method which we get from e(event) ,And because of this our event will not
+    to upper element by bubbling
+    -> to stop any event to get bubbled from bottom to top order
+     */
+    // Ul ID Listner
+    //  document.getElementById('images').addEventListener('click', function (e) {
+    //     console.log('clicked inside the ul');
+    // }, false)
+
+    // Owl ID Listner
+    // document.getElementById('owl').addEventListener('click', function (e) {
+    //     console.log('clicked on Owl');
+    //     e.stopPropagation()
+    // }, false)
+
+    // -- Prevent the event to direct or redirect anywhere
+    document.getElementById('google').addEventListener('click', (e) => {
+        e.preventDefault()
+    })
+
+
+    // Task -> on click on any image the image hould get hide
+    document.getElementById('images').addEventListener('click', (e) => {
+        // e.target gives the element from which the event get targetted
+        // console.log(e.target);
+
+        // e.target also gives many properties like parentNode, value etc
+        console.log(e.target.parentNode);
+        if (e.target.tagName === 'IMG') {
+            const removeIt = e.target.parentNode;
+            // removeIt.remove();
+            removeIt.parentNode.removeChild(removeIt);
+        }
+
+    })
 </script>
 
 </html>
