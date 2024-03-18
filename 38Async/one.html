@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One</title>
+</head>
+
+<body>
+    <h1>Javascript Asynchrounous Nature</h1>
+    <button id="stop">
+        Stop
+    </button>
+</body>
+<script>
+    // Set Timeout is a method but it also calls an API. It is not core javascript part we get it from runtime environments
+    // Set Timeout executes the handler only once after certain time. 
+
+    // setTimeout(() => {
+    //     console.log("Set Timeout Called !");
+    // }, 2000)
+
+    // We can pass reference of the function as well in setTimeout.
+    // const callFunc = () => {
+    //     console.log("Set Time Out Called !");
+    // }
+    // setTimeout(callFunc, 2000)
+
+    // -- clearTimeout -- 
+    // It is used to stop the event before occuring, It takes the reference of the seTimeout() which we want to stop.
+    const changeNature = () => {
+        document.querySelector('h1').innerHTML = `Javascript Synchrounous Nature`
+    }
+    const jsNature = setTimeout(changeNature, 5000)
+    const stop = document.querySelector('#stop');
+    stop.addEventListener('click', () => {
+        clearTimeout(jsNature)
+        console.log("setTimeout Stopped !");
+    })
+    // Set Interval defines by name it executes the handler in the given time interval
+</script>
+
+</html>
