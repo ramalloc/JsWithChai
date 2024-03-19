@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /*
+    -> Fetch is new, before fetch we used XMLHttpRequest which is heavily used in AJAX programming.
+    -> In XMLHttpRequest we have different states, XMLHttpRequest is a method which consists request and other methods by which
+        we send and recieve the data.
+        */
+    //    -> So we have to make an object of XMLHttpRequest() so we used {new}. 
+    const xhr = new XMLHttpRequest();
+    const gitUrl = 'https://api.github.com/users/ramalloc'
+    // we can access open method by making instance of XMLHttpRequest(), open() takes method and url as argument
+    xhr.open('GET', gitUrl)
+    // Wehen we send request the status code continously changing
+    // Below it changes from 0 to 1 we didn't track it continously
+    // console.log(xhr.readyState);
+
+    // Below we will track the status code continously using onreadyStateChange, we set a function equal to it and run that
+    //  when it changes.
+    // xhr.onreadystatechange = function () {
+    //     console.log(xhr.readyState);
+    // }
+
+    // now we will print the response that we get from URL when state is 4
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            console.log(this.response);
+            // changing the data into json from string 
+            const data = JSON.parse(this.response);
+            console.log(data.login);            
+        }
+    }
+
+    // Open do not called itself we have to call open using method of XMLHttpRequest instance which is send().
+    xhr.send()
+
+    // console.log() is not functionality of core javascript it is enjected by runtime environment 
+    // NodeJs is an implementation of V8 engine which runs the javascript, javascript is an wrapper on C++.
+    // V8 engine provides debugging tools, API access etc. also console log() is provided by it.
+</script>
+
+</html>
