@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One</title>
+</head>
+
+<body>
+    <h1>Javascript Asynchrounous Nature</h1>
+    <button id="stop">
+        Stop
+    </button>
+    <button id="start">
+        Start
+    </button>
+</body>
+<script>
+    // Set Interval runs the code in a range or interval of time, we can pass reference of the function as well
+    // const sayName = (name)=> {
+    //     console.log(name, Date.now());
+    // }
+    // We can pass parameters as well in setInterval() for the referenced function
+    // const namingSetInt = setInterval(sayName, 2000, "Roshan")
+
+    // We can stop the interval for this we have clearInterval() which takes reference of setInterval
+    // clearInterval(namingSetInt)
+    const h1 = document.querySelector('h1');
+    const start = document.querySelector('#start')
+    const stop = document.querySelector('#stop')
+
+    let times = 1;
+    let startInt;
+    const changeContextName = (context) => {
+        h1.innerHTML = `${context} started at ${Date.now()} and this is ${times} times !`
+        times++;
+
+    } 
+    start.addEventListener('click', () => {
+        startInt = setInterval(changeContextName, 2000, "setInterval")
+    })
+
+    stop.addEventListener('click', () => {
+        clearInterval(startInt)
+    })
+</script>
+</html>
