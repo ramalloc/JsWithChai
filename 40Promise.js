@@ -101,3 +101,66 @@ const promiseFour = new Promise((res, rej) => {
     console.log("The promise is resolved or rejected !");
 })
 
+
+// --- Another Way To Handle Promise ---
+// ---- Async Await ----
+// It waits program to complete, if it completes then they move forward
+
+// Promise Five
+const promiseFive = new Promise((res, rej) => {
+    setTimeout(() => {
+        let error = true;
+        if(!error){
+            res({username: "Roshan", pass: "123"})
+        }
+        else{
+            rej("Something Went Wrong !")
+        }
+    }, 1000)
+});
+
+// To make a funtion asynchronous we use {async} brfore that function to indicate that function aas asynchrounous 
+async function consumePromiseFour(){
+    // await - It is used to wait for the task to be completed then move forward and used handle the promise
+    // const response = await promiseFive
+    // console.log(response);
+
+    // Async Await cannot handle error directly, and when we use Promise then error can be occured. So we can use try-catch block
+    // By using try-catch we can handle error gracefully which gives cleaner code
+    try {
+        const response = await promiseFive
+        console.log(response);
+    } catch (error) {
+        console.log("ERROR: Something Went Wrong !");
+    }
+
+}
+// now we have to call the above function 
+consumePromiseFour();
+
+
+// User Async Await Promise
+const getAllUsers = async() => {
+    // fetch is an time consuming task and we don't how much time it will take therefore we used await here
+    try {
+        const res = await fetch('https://jsonplaceholder.typicode.com/users')
+        // .json is also taking time therefore we used await here also
+        const data = await res.json()
+        console.log((data));
+    } catch (error) {
+        console.log("ERROR: User not Fetched in Async");
+    }
+}
+// getAllUsers();
+
+// User with .then and .catch
+fetch('https://jsonplaceholder.typicode.com/users')
+.then((res) => {
+    return res.json();
+})
+.then((data) => {
+    console.log(data);
+})
+.catch((error) => {
+    console.log("ERROR: User not Fetched in .then()");
+})
