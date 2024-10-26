@@ -117,4 +117,13 @@ const shoppingCart = [
 
 const priceToPay = shoppingCart.reduce((acc, item) => acc + item.price, 0)
 
-console.log(priceToPay);
+// console.log(priceToPay);
+
+const arrNew = [1, 2, 3, 4, 5];
+
+const total = arrNew.reduce((acc, curr) => {
+    return acc + curr;
+}, initPrev = 0);
+
+console.log(total);
+

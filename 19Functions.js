@@ -49,7 +49,7 @@ function loginUserMessage(username = "sam") {
 
 
 // This shows "hitesh just logged in"
-console.log(loginUserMessage("hitesh"))
+// console.log(loginUserMessage("hitesh"))
 
 // This will print "just logged in", not showing username because we passed an empty string
 // console.log(loginUserMessage(""))
@@ -60,10 +60,20 @@ console.log(loginUserMessage("hitesh"))
 
 
 
-function calculateCartPrice(val1, val2, ...num1) {
-    return num1
+// function calculateCartPrice(val1, val2, ...num1) {
+//     return num1
+// }
+
+function calculateCartPrice(...obj) {
+    return obj
 }
 
+const obj3 = {
+    1: "Hey",
+    2: "Hi"
+};
+
+console.log(calculateCartPrice(obj3))
 // console.log(calculateCartPrice(200, 400, 500, 2000))
 
 const user = {
@@ -72,7 +82,7 @@ const user = {
 }
 
 function handleObject(anyobject) {
-    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);
+    // console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);
 }
 
 // handleObject(user)
@@ -88,4 +98,4 @@ function returnSecondValue(getArray) {
 }
 
 // console.log(returnSecondValue(myNewArray));
-console.log(returnSecondValue([200, 400, 500, 1000]));
+// console.log(returnSecondValue([200, 400, 500, 1000]));
